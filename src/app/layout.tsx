@@ -1,6 +1,8 @@
 import Navbar from "@/components/Navbar";
 import "./globals.css";
 import { Space_Grotesk } from 'next/font/google';
+import 'easymde/dist/easymde.min.css';
+
 
 const spaceGrotesk = Space_Grotesk({
   subsets: ['latin'],
