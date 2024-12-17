@@ -11,6 +11,25 @@
     }
 }
 
+@keyframes pulseText {
+  0%, 100% {
+    color: white;
+    border: 2px solid white;
+    text-shadow: 0 0 5px white;
+  }
+  50% {
+    color: black;
+    border: 2px solid black;
+    text-shadow: 0 0 5px black;
+  }
+}
+
+.animate-pulse-text {
+  animation: pulseText 2s infinite;
+  padding: 0.5rem; /* Add some padding for the border effect */
+  border-radius: 0.5rem; /* Optional: round the corners */
+}
+
 @layer base {
   :root {
 

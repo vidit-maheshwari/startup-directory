@@ -33,9 +33,11 @@ export default function ResetButton() {
   };
 
   return (
-    <div className='bg-red-600 relative'>
-<Button variant='outline' className='  text-black hover:bg-black absolute hover:text-white w-4 p-4 rounded-full -top-4  right-2 ' type='reset' onClick={reset}><Link href='/'><CircleX className='w-4 h-4' /></Link></Button>
+    <div className=' relative'>
+<Button variant='outline' className='  text-black hover:bg-black absolute hover:text-white w-4 p-5 rounded-full -top-5  right-2 ' type='reset' onClick={reset}><Link href='/'><CircleX className='w-4 h-4' /></Link></Button>
           
    </div>
   );
 }
+
+
