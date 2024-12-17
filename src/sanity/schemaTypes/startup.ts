@@ -7,6 +7,10 @@ export const startup = defineType({
     type: "document",
     fields: [
         defineField({
+            name: "id",
+            type: "number",
+        }),
+        defineField({
             name: "title",
             type: "string",
         }),

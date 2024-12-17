@@ -125,7 +125,7 @@ const Page = async ({ searchParams }: { searchParams: { query?: string | undefin
             key={startup._id}
             className="group transform transition-transform duration-300 hover:-translate-y-2 hover:shadow-xl"
           >
-            <Link href={`/startups/${startup.slug.current}`}>
+            <Link href={`/startups/${startup._id}`}>
               <StartupCard
                 _createdAt={startup._createdAt}
                 views={startup.views}
