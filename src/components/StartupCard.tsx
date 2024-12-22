@@ -73,6 +73,9 @@ import { Card, CardContent, CardFooter, CardHeader } from '@/components/ui/card'
 import { AspectRatio } from '@/components/ui/aspect-ratio';
 import { Badge } from '@/components/ui/badge';
 import { CalendarDays, Eye } from 'lucide-react';
+import { client } from '@/sanity/lib/client';
+import { VIEWS_BY_ID } from '@/sanity/lib/queries';
+import { writeClient } from '@/sanity/lib/write-client';
 
 interface StartupCardProps {
   _createdAt: string;
@@ -86,7 +89,7 @@ interface StartupCardProps {
   slug: string;
 }
 
-export function StartupCard({
+export async function StartupCard({
   _createdAt,
   views,
   title,
@@ -94,7 +97,11 @@ export function StartupCard({
   image,
   category,
 
+
 }: StartupCardProps) {
+  // const totalViews = await client.fetch(VIEWS_BY_ID, { search: _id });
+  // await writeClient.patch(_id).set({ views: totalViews.views + 1 }).commit();
+
   return (
     <Card
       className="overflow-hidden bg-gradient-to-br from-blue-50 to-white shadow-md transition-transform duration-300 hover:-translate-y-2 hover:shadow-2xl hover:ring-2 hover:ring-blue-200 hover:ring-offset-2 rounded-lg group"

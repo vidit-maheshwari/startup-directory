@@ -86,7 +86,7 @@ import React from 'react';
 import { BackgroundBeams } from '../components/ui/background-beams';
 import SearchBar from '../components/SearchBar';
 import { client } from '@/sanity/lib/client';
-import { STARTUPS_QUERY } from '@/sanity/lib/queries';
+import { STARTUPS_QUERY, VIEWS_BY_ID } from '@/sanity/lib/queries';
 import { StartupCard } from '@/components/StartupCard';
 import Link from 'next/link';
 
@@ -94,6 +94,9 @@ const Page = async ({ searchParams }: { searchParams: { query?: string | undefin
   // Access `query` directly from `searchParams`
   const query = (await searchParams)?.query || null;
   const data = await client.fetch(STARTUPS_QUERY, { search: query });
+  // const totalViews = await client.fetch(VIEWS_BY_ID, { search: data._id });
+
+  // console.log(data);
 
   return (
     <>

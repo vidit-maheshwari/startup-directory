@@ -5,13 +5,16 @@ import { notFound } from 'next/navigation';
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import Image from "next/image";
 import { client } from "@/sanity/lib/client";
-import { STARTUP_BY_ID_QUERY } from "@/sanity/lib/queries";
+import { STARTUP_BY_ID_QUERY, VIEWS_BY_ID } from "@/sanity/lib/queries";
+import { writeClient } from '@/sanity/lib/write-client';
 
 async function StartupDetails({ params }: { params: Promise<{ id: string }>}) {
   const id = (await params)?.id;
   if (!id) return notFound();
 
   const startup = await client.fetch(STARTUP_BY_ID_QUERY, { id });
+  const totalViews = await client.fetch(VIEWS_BY_ID, {  id });
+  await writeClient.patch(id).set({ views: totalViews.views + 1 }).commit();
 
   return (
     <div className="w-full h-screen bg-gray-50">
