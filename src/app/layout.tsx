@@ -2,6 +2,8 @@ import Navbar from "@/components/Navbar";
 import "./globals.css";
 import { Space_Grotesk } from 'next/font/google';
 import 'easymde/dist/easymde.min.css';
+import { Toaster } from "@/components/ui/toaster";
+
 
 
 const spaceGrotesk = Space_Grotesk({
@@ -9,6 +11,8 @@ const spaceGrotesk = Space_Grotesk({
   variable: '--font-space-grotesk',
   weight: ['400', '500', '600', '700']
 })
+
+
 
 
 export default function RootLayout({
@@ -20,8 +24,11 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${spaceGrotesk.variable} `}
       >
+    
         <Navbar />
         {children}
+        <Toaster />
+   
       </body>
     </html>
   );

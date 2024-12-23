@@ -40,7 +40,7 @@ export const VIEWS_BY_ID =
 
 
 export const AUTHOR_BY_GOOGLE_ID = defineQuery(`
-  *[_type == "author" && id == $id][0]{
+  *[_type == "author" && googleId == $id][0]{
       _id,
       id,
       name,
@@ -50,3 +50,4 @@ export const AUTHOR_BY_GOOGLE_ID = defineQuery(`
       bio
   }
   `);
+

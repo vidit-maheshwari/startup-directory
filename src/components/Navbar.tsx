@@ -103,7 +103,7 @@ async function Navbar() {
           </span>
           {/* Create Button */}
           <Link
-            href="/create"
+            href="/startups/create"
             className="bg-white text-black px-4 py-2 rounded-full hover:bg-gray-200 transition font-medium"
           >
             Create
